@@ -1,0 +1,7 @@
+# 절대 GitHub에 올리면 안 되는 것들
+.streamlit/secrets.toml
+vectorstore/
+chroma/
+__pycache__/
+*.pyc
+.env
