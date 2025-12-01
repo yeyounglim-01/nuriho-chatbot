@@ -27,7 +27,7 @@ llm = AzureChatOpenAI(
 embeddings = AzureOpenAIEmbeddings(
     azure_endpoint=azure_endpoint,
     api_key=azure_key,
-    azure_deployment="ada",             # 너가 방금 만든 이름이 ada면 이걸로!
+    azure_deployment="text-embedding-ada-002",             # 너가 방금 만든 이름이 ada면 이걸로!
     # 만약 이름이 다르면 여기만 바꿔 → 예: "text-embedding-ada-002", "my-ada" 등
     api_version="2024-05-01-preview",   # 이 버전이 embedding에서 제일 잘 됨
 )
@@ -107,3 +107,4 @@ if user_input := st.chat_input("누리호에 대해 궁금한 거 다 물어보�
         response = chain.stream(user_input)
         answer = st.write_stream(response)
     st.session_state.messages.append(ChatMessage(role="assistant", content=answer))
+
